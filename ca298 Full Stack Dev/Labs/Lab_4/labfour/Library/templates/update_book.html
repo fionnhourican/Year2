@@ -1,0 +1,11 @@
+<!-- update_book.html -->
+{% extends 'base.html' %}
+
+
+{% block content %}
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{ form.as_table }}
+        <button type="submit">Update book Book</button>
+    </form>
+{% endblock %}

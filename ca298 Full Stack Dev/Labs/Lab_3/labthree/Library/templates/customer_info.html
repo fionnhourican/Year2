@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %} {{ customer.name }}'s information {% endblock %}
+
+{% block content %}
+<div class="card w-50">
+    <div class="card-body">
+        <h5 class="card-title">Information for Customer {{ customer.name }}</h5>
+        <h7 class="card-title">Currently Borrowing:</h7>
+        {% if borrowed %}
+            {% for borrow in borrowed %}
+            <p class="card-text">{{ borrowed.book.title }}</p>
+            {% endfor %}
+        {% else %} 
+        <p class="card-text">{{ customer.name }} is not currently borrowing</p>
+        {% endif %}
+
+        <h7 class="card-title">Previously Borrowed:</h7>
+        {% if returned %}
+            {% for borrow in returned %}
+            <p class="card-text">{{ borrow.book.title }}</p>
+            {% endfor %}
+        {% else %}
+        <p class="card-text">{{ customer.name }} has yet to borrow a book.</p>
+        {% endif %}
+
+
+        <a href="/" class="btn btn-primary">Back to library</a>
+    </div>
+</div>
+{% endblock %}

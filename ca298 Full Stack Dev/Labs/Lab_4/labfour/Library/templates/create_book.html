@@ -1,0 +1,11 @@
+<!-- create_book.html -->
+{% extends 'base.html' %}
+
+
+{% block content %}
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{ form.as_table }}
+        <button type="submit">Create Book</button>
+    </form>
+{% endblock %}
