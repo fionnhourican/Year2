@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Example 4</title>
+</head>
+<body>
+	<form>
+		<label for="num1">Number 1:</label>
+		<input type="text" id="num1" name="num1"><br>
+
+		<label for="num2">Number 2:</label>
+		<input type="text" id="num2" name="num2"><br>
+
+		<input type="submit" value="Add">
+	</form>
+
+	<p id="result"></p>
+
+	<script>
+		const form = document.querySelector('form');
+		const result = document.querySelector('#result');
+
+		form.addEventListener('submit', (event) => {
+			event.preventDefault();
+
+			const num1 = parseFloat(document.querySelector('#num1').value);
+			const num2 = parseFloat(document.querySelector('#num2').value);
+
+			if (isNaN(num1) || isNaN(num2)) {
+				alert('Both fields must contain a number');
+				return;
+			}
+
+			result.textContent = `Result: ${num1 + num2}`;
+		});
+	</script>
+</body>
+</html>

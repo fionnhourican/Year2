@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Example 2</title>
+  </head>
+  <body>
+    <p id="my-paragraph">Some text</p>
+    <button id="my-button">Change Color</button>
+    <script>
+      // Select the button and paragraph elements using their IDs
+      let button = document.getElementById("my-button");
+      let paragraph = document.getElementById("my-paragraph");
+
+      // Add a click event listener to the button
+      button.addEventListener("click", function() {
+        // Change the color of the paragraph to red
+        paragraph.style.color = "red";
+      });
+    </script>
+  </body>
+</html>

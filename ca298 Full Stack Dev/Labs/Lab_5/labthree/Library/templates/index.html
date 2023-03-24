@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block title %}
+    List of books
+{% endblock %}
+
+
+{% block content %}
+  {% for b in books %}
+    <div class="card w-50">
+      <div class="card-body">
+        <h5 class="card-title">{{ b.title }}</h5>
+        <p class="card-text">{{b.author }}</p>
+        <p class="card-text">{{ b.genre }}</p>
+        <a href="{{ b.id }}" class="btn btn-primary">Learn more</a>
+        <a href="category/{{ b.genre }}" class="btn btn-primary">More {{ b.genre }} Books</a>
+      </div>
+    </div>
+  {% endfor %}
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}
+    All customers
+{% endblock %}
+
+
+{% block content %}
+  {% for c in customers %}
+    <div class="card w-50">
+      <div class="card-body">
+        <p class="card-text">{{c.name }}</p>
+        <a href="customers/{{ c.id }}" class="btn btn-primary">Customers information</a>
+      </div>
+    </div>
+  {% endfor %}
+{% endblock %}

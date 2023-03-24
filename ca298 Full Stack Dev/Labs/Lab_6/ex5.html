@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ex6 - Dog Generator</title>
+</head>
+<body>
+	<img id="dog-img" src="" alt="Random Dog">
+	<button id="new-dog-btn">New Dog</button>
+
+	<script>
+		const dogImg = document.getElementById('dog-img');
+		const newDogBtn = document.getElementById('new-dog-btn');
+
+		// Add event listener to button
+		newDogBtn.addEventListener('click', getNewDog);
+
+		// Function to fetch new dog image
+		function getNewDog() {
+			// Fetch random dog image url
+			fetch('https://dog.ceo/api/breeds/image/random')
+				.then(response => response.json())
+				.then(data => {
+					// Update image src attribute with new url
+					dogImg.src = data.message;
+				})
+				.catch(error => console.error(error));
+		}
+	</script>
+</body>
+</html>
+

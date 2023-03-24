@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Example 3</title>
+</head>
+<body>
+	<form id="myForm">
+		<label for="nameInput">Name:</label>
+		<input type="text" id="nameInput" name="nameInput">
+		<input type="submit" value="Submit">
+	</form>
+
+	<script>
+		const form = document.querySelector('#myForm');
+		form.addEventListener('submit', (event) => {
+			event.preventDefault();
+			const nameInput = document.querySelector('#nameInput');
+			const name = nameInput.value.trim();
+			if (name === '') {
+				alert('Please enter a name');
+			} else {
+				const greeting = document.createElement('p');
+				greeting.textContent = `Hello ${name}`;
+				document.body.appendChild(greeting);
+			}
+		});
+	</script>
+</body>
+</html>
